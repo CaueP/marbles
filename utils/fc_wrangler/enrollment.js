@@ -71,7 +71,7 @@ module.exports = function (logger) {
 
 			chain.addOrderer(new Orderer(options.orderer_url, {
 				pem: options.pem,
-				'ssl-target-name-override': options.common_name				//can be null if cert matches hostname
+				'ssl-target-name-override': options.common_name || null				//can be null if cert matches hostname
 			}));
 
 			try {
